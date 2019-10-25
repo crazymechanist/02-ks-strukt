@@ -56,8 +56,8 @@ void UzykownikMenager::wypiszWszystkichUzytkownkow() {
     }
 }
 
-void UzykownikMenager::wczytajUzytkownikowZPliku(){
-plikZUzytkownikami.wczytajUzytkownikowZPliku(uzytkownicy);
+void UzykownikMenager::wczytajUzytkownikowZPliku() {
+    uzytkownicy=plikZUzytkownikami.wczytajUzytkownikowZPliku();
 }
 
 
