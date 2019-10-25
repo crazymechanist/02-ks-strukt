@@ -10,9 +10,10 @@ using namespace std;
 class KsiazkaAdresowa
 {
 
- UzykownikMenager uzykownikMenager;
+    UzykownikMenager uzykownikMenager;
 
 public:
+    KsiazkaAdresowa();
     void rejestracjaUzytkownika();
     void wypiszWszystkichUzytkownkow();
 
