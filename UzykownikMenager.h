@@ -32,6 +32,7 @@ class UzykownikMenager
     void wypiszWszystkichUzytkownkow();
     void wczytajUzytkownikowZPliku();
     void wylogowanieUzytkownika();
+    void zmianaHaslaZalogowanegoUzytkownika();
 };
 
 #endif

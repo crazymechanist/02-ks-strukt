@@ -95,5 +95,22 @@ void UzykownikMenager::wylogowanieUzytkownika(){
 idZalogowanegoUzytkownika =0;
 }
 
+void UzykownikMenager::zmianaHaslaZalogowanegoUzytkownika() {
+    string noweHaslo = "";
+    int iter=0;
+    cout << "Podaj nowe haslo: ";
+    noweHaslo = MetodyPomocniczne::wczytajLinie();
+
+    while (iter != uzytkownicy.size()) {
+        if (uzytkownicy[iter].pobierzId()== idZalogowanegoUzytkownika) {
+            uzytkownicy[iter].ustawHaslo(noweHaslo);
+            cout << "Haslo zostalo zmienione." << endl << endl;
+            system("pause");
+        }
+        iter++;
+    }
+    plikZUzytkownikami.zapiszWszystkichUzytkownikowDoPliku(uzytkownicy);
+}
+
 
 
