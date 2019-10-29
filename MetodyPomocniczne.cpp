@@ -7,3 +7,9 @@ string MetodyPomocniczne::konwersjaIntNaString(int liczba)
     string str = ss.str();
     return str;
 }
+
+string MetodyPomocniczne::wczytajLinie(){
+    string wejscie = "";
+    getline(cin, wejscie);
+    return wejscie;
+}

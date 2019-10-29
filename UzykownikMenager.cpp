@@ -60,4 +60,40 @@ void UzykownikMenager::wczytajUzytkownikowZPliku() {
     uzytkownicy=plikZUzytkownikami.wczytajUzytkownikowZPliku();
 }
 
+void UzykownikMenager::logowanieUzytkownika() {
+    string login = "", haslo = "";
+    int iter=0;
+
+    cout << endl << "Podaj login: ";
+    login = MetodyPomocniczne::wczytajLinie();
+
+    while (iter != uzytkownicy.size()) {
+        if (uzytkownicy[iter].pobierzLogin() == login)        {
+            for (int iloscProb = 3; iloscProb > 0; iloscProb--) {
+                cout << "Podaj haslo. Pozostalo prob: " << iloscProb << ": ";
+                haslo = MetodyPomocniczne::wczytajLinie();
+
+                if (uzytkownicy[iter].pobierzHaslo() == haslo) {
+                    cout << endl << "Zalogowales sie." << endl << endl;
+                    system("pause");
+                    idZalogowanegoUzytkownika = uzytkownicy[iter].pobierzId();
+                    return;
+                }
+            }
+            cout << "Wprowadzono 3 razy bledne haslo." << endl;
+            system("pause");
+        }
+        iter++;
+    }
+    cout << "Nie ma uzytkownika z takim loginem" << endl << endl;
+    system("pause");
+    return;
+}
+
+
+void UzykownikMenager::wylogowanieUzytkownika(){
+idZalogowanegoUzytkownika =0;
+}
+
+
 
