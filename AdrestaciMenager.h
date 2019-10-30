@@ -18,6 +18,7 @@ class AdrestaciMenager
     vector <Adresat> adresaci;
     PlikZAdresatami plikZAdresatami;
     int idOstatniegoAdresata;
+    void wyswietlDaneAdresata(Adresat adresat);
 
     public:
     AdrestaciMenager(string nazwaPlikuZAdresatami)
@@ -26,6 +27,7 @@ class AdrestaciMenager
     }
     int pobierzIdOstatniegoAdresata();
     void wczytajAdresatowZalogowanegoUzytkownikaZPliku(int idZalogowanegoUzytkownika);
+    void wyswietlWszystkichAdresatow();
 };
 
 #endif

@@ -9,8 +9,10 @@ int main() {
     ksiazkaAdresowa.wypiszWszystkichUzytkownkow();
     ksiazkaAdresowa.logowanieUzytkownika();
     ksiazkaAdresowa.wczytajAdresatowZalogowanegoUzytkownikaZPliku();
+    ksiazkaAdresowa.wyswietlWszystkichAdresatow();
     ksiazkaAdresowa.logowanieUzytkownika();
     ksiazkaAdresowa.wczytajAdresatowZalogowanegoUzytkownikaZPliku();
+    ksiazkaAdresowa.wyswietlWszystkichAdresatow();
     //ksiazkaAdresowa.zmianaHaslaZalogowanegoUzytkownika();
     //ksiazkaAdresowa.wylogowanieUzytkownika();
 

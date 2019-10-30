@@ -25,3 +25,6 @@ void KsiazkaAdresowa::wczytajAdresatowZalogowanegoUzytkownikaZPliku() {
     adrestaciMenager.wczytajAdresatowZalogowanegoUzytkownikaZPliku(uzykownikMenager.zwrocIdZalogowanegoUzytkownika() );
 }
 
+void KsiazkaAdresowa::wyswietlWszystkichAdresatow() {
+    adrestaciMenager.wyswietlWszystkichAdresatow();
+}
