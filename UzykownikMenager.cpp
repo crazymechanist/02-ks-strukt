@@ -112,5 +112,9 @@ void UzykownikMenager::zmianaHaslaZalogowanegoUzytkownika() {
     plikZUzytkownikami.zapiszWszystkichUzytkownikowDoPliku(uzytkownicy);
 }
 
+int UzykownikMenager::zwrocIdZalogowanegoUzytkownika() {
+    return idZalogowanegoUzytkownika;
+}
+
 
 

@@ -21,3 +21,7 @@ void KsiazkaAdresowa::zmianaHaslaZalogowanegoUzytkownika(){
     uzykownikMenager.zmianaHaslaZalogowanegoUzytkownika();
 }
 
+void KsiazkaAdresowa::wczytajAdresatowZalogowanegoUzytkownikaZPliku() {
+    adrestaciMenager.wczytajAdresatowZalogowanegoUzytkownikaZPliku(uzykownikMenager.zwrocIdZalogowanegoUzytkownika() );
+}
+

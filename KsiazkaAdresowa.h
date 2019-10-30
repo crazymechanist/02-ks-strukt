@@ -23,6 +23,7 @@ public:
     void wypiszWszystkichUzytkownkow();
     void wylogowanieUzytkownika();
     void zmianaHaslaZalogowanegoUzytkownika();
+    void wczytajAdresatowZalogowanegoUzytkownikaZPliku();
 
 
 };

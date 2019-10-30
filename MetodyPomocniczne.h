@@ -10,7 +10,8 @@ class MetodyPomocniczne {
 public:
     static string konwersjaIntNaString(int liczba);
     static string wczytajLinie();
-
+    static int konwersjaStringNaInt(string liczba);
+    static string pobierzLiczbe(string tekst, int pozycjaZnaku);
 };
 
 #endif

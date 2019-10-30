@@ -7,6 +7,7 @@
 #include <fstream>
 #include <sstream>
 
+
 #include "Adresat.h"
 #include "PlikZAdresatami.h"
 
@@ -21,11 +22,10 @@ class AdrestaciMenager
     public:
     AdrestaciMenager(string nazwaPlikuZAdresatami)
     : plikZAdresatami(nazwaPlikuZAdresatami) {
-        //adresaci=plikZAdresatami.wczytajAdresatowZalogowanegoUzytkownikaZPliku();
         idOstatniegoAdresata=0;
     }
     int pobierzIdOstatniegoAdresata();
-    void wczytajAdresatowZalogowanegoUzytkownikaZPliku();
+    void wczytajAdresatowZalogowanegoUzytkownikaZPliku(int idZalogowanegoUzytkownika);
 };
 
 #endif
