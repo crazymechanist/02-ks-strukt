@@ -77,3 +77,11 @@ Adresat AdrestaciMenager::podajDaneNowegoAdresata(int idZalogowanegoUzytkownika)
 void AdrestaciMenager::dopiszAdresataDoPliku(Adresat adresat){
     plikZAdresatami.dopiszAdresataDoPliku(adresat);
 }
+
+bool AdrestaciMenager::czyKsiazkaAdresatowJestPusta(){
+    return adresaci.empty();
+}
+
+void AdrestaciMenager::wyczyscKsiazkeAdresowa(){
+    adresaci.clear();
+}
