@@ -31,6 +31,8 @@ class AdrestaciMenager
     void wczytajAdresatowZalogowanegoUzytkownikaZPliku(int idZalogowanegoUzytkownika);
     void wyswietlWszystkichAdresatow();
     void dodajAdresata(int idZalogowanegoUzytkownika);
+    bool czyKsiazkaAdresatowJestPusta();
+    void wyczyscKsiazkeAdresowa();
 };
 
 #endif

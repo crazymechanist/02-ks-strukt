@@ -13,11 +13,14 @@ class KsiazkaAdresowa
 
     UzykownikMenager uzykownikMenager;
     AdrestaciMenager adrestaciMenager;
+    char wybierzOpcjeZMenuUzytkownika();
+    char wybierzOpcjeZMenuGlownego();
 
 public:
     KsiazkaAdresowa(string nazwaPlikuZUzytkownikami,string nazwaPlikuZAdresatami):uzykownikMenager(nazwaPlikuZUzytkownikami), adrestaciMenager(nazwaPlikuZAdresatami){
     uzykownikMenager.wczytajUzytkownikowZPliku();
     }
+    void wyswietlMenu();
     void logowanieUzytkownika();
     void rejestracjaUzytkownika();
     void wypiszWszystkichUzytkownkow();
