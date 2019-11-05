@@ -4,7 +4,7 @@
 #include <iostream>
 #include <vector>
 #include <fstream>
-#include <tuple>
+
 
 #include "Adresat.h"
 #include "MetodyPomocniczne.h"
@@ -14,19 +14,27 @@ using namespace std;
 
 class PlikZAdresatami{
 
-    const string nazwaPlikuZAdresatami;
-    int pobierzIdUzytkownikaZDanychOddzielonychPionowymiKreskami(string daneJednegoAdresataOddzielonePionowymiKreskami);
-    int pobierzIdAdresataZDanychOddzielonychPionowymiKreskami(string daneJednegoAdresataOddzielonePionowymiKreskami);
-    int zwrocIdOstatniegoAdresataZPliku(string daneOstaniegoAdresataWPliku);
+    const string NAZWA_PLIKU_Z_ADRESATAMI;
+    int idOstatniegoAdresata;
+
     bool czyPlikJestPusty();
     string zamienDaneAdresataNaLinieZDanymiOddzielonymiPionowymiKreskami(Adresat adresat);
+    Adresat pobierzDaneAdresata(string daneAdresataOddzielonePionowymiKreskami);
+    int pobierzIdAdresataZDanychOddzielonychPionowymiKreskami(string daneJednegoAdresataOddzielonePionowymiKreskami);
+    int pobierzIdUzytkownikaZDanychOddzielonychPionowymiKreskami(string daneJednegoAdresataOddzielonePionowymiKreskami);
+
+
+
 
 public:
-    PlikZAdresatami(string NAZWAPLIKUZADRESATAMI)
-    :nazwaPlikuZAdresatami(NAZWAPLIKUZADRESATAMI) {}
-    Adresat pobierzDaneAdresata(string daneAdresataOddzielonePionowymiKreskami);
-    tuple<vector <Adresat>,int > wczytajAdresatowZalogowanegoUzytkownikaZPliku(int idZalogowanegoUzytkownika);
-    void dopiszAdresataDoPliku(Adresat adresat);
+    PlikZAdresatami(string nazwaPlikuZAdresatami)
+        :NAZWA_PLIKU_Z_ADRESATAMI(nazwaPlikuZAdresatami) {
+        idOstatniegoAdresata=0;
+    }
+
+    vector <Adresat> wczytajAdresatowZalogowanegoUzytkownikaZPliku(int idZalogowanegoUzytkownika);
+    bool dopiszAdresataDoPliku(Adresat adresat);
+    int pobierzIdOstatniegoAdresata();
 };
 
 #endif

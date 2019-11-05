@@ -12,24 +12,29 @@ class KsiazkaAdresowa
 {
 
     UzykownikMenager uzykownikMenager;
-    AdrestaciMenager adrestaciMenager;
+    AdrestaciMenager *adrestaciMenager;
     char wybierzOpcjeZMenuUzytkownika();
     char wybierzOpcjeZMenuGlownego();
+    const string NAZWA_PLIKU_Z_ADRESATAMI;
 
 public:
-    KsiazkaAdresowa(string nazwaPlikuZUzytkownikami,string nazwaPlikuZAdresatami):uzykownikMenager(nazwaPlikuZUzytkownikami), adrestaciMenager(nazwaPlikuZAdresatami){
-    uzykownikMenager.wczytajUzytkownikowZPliku();
+    KsiazkaAdresowa(string nazwaPlikuZUzytkownikami,string nazwaPlikuZAdresatami)
+    :uzykownikMenager(nazwaPlikuZUzytkownikami), NAZWA_PLIKU_Z_ADRESATAMI(nazwaPlikuZAdresatami) {
+        adrestaciMenager = NULL;
     }
-    void wyswietlMenu();
-    void logowanieUzytkownika();
+    ~KsiazkaAdresowa() {
+        delete adrestaciMenager;
+        adrestaciMenager = NULL;
+    }
     void rejestracjaUzytkownika();
     void wypiszWszystkichUzytkownkow();
-    void wylogowanieUzytkownika();
+    void logowanieUzytkownika();
     void zmianaHaslaZalogowanegoUzytkownika();
-    void wczytajAdresatowZalogowanegoUzytkownikaZPliku();
-    void wyswietlWszystkichAdresatow();
+    void wylogowanieUzytkownika();
     void dodajAdresata();
+    void wyswietlWszystkichAdresatow();
 
+    void wyswietlMenu();
 
 };
 

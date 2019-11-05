@@ -1,9 +1,5 @@
 #include "AdrestaciMenager.h"
 
-void AdrestaciMenager::wczytajAdresatowZalogowanegoUzytkownikaZPliku(int idZalogowanegoUzytkownika) {
-    tie(adresaci,idOstatniegoAdresata)=plikZAdresatami.wczytajAdresatowZalogowanegoUzytkownikaZPliku(idZalogowanegoUzytkownika);
-}
-
 void AdrestaciMenager::wyswietlWszystkichAdresatow()
 {
     system("cls");
@@ -42,17 +38,22 @@ void AdrestaciMenager::dodajAdresata(int idZalogowanegoUzytkownika)
     adresat = podajDaneNowegoAdresata(idZalogowanegoUzytkownika);
 
     adresaci.push_back(adresat);
-    dopiszAdresataDoPliku(adresat);
+    if(plikZAdresatami.dopiszAdresataDoPliku(adresat)){
+        cout<<"Nowy adresat zostal dodany"<<endl;
+    }
+    else{
+        cout <<"Blad. Nie udalo sie dodac nowego adresata do pliku. " << endl;
+        system("pause");
+    }
 
-    ++idOstatniegoAdresata;
 }
 
 Adresat AdrestaciMenager::podajDaneNowegoAdresata(int idZalogowanegoUzytkownika)
 {
     Adresat adresat;
 
-    adresat.ustawId(++idOstatniegoAdresata);
-    adresat.ustawIdUzytkownika(idZalogowanegoUzytkownika);
+    adresat.ustawId(plikZAdresatami.pobierzIdOstatniegoAdresata()+1);
+    adresat.ustawIdUzytkownika(ID_ZALOGOWANEGO_UZYTKOWNIKA);
 
     cout << "Podaj imie: ";
     adresat.ustawImie(MetodyPomocniczne::wczytajLinie() );
@@ -74,14 +75,7 @@ Adresat AdrestaciMenager::podajDaneNowegoAdresata(int idZalogowanegoUzytkownika)
     return adresat;
 }
 
-void AdrestaciMenager::dopiszAdresataDoPliku(Adresat adresat){
-    plikZAdresatami.dopiszAdresataDoPliku(adresat);
-}
-
 bool AdrestaciMenager::czyKsiazkaAdresatowJestPusta(){
     return adresaci.empty();
 }
 
-void AdrestaciMenager::wyczyscKsiazkeAdresowa(){
-    adresaci.clear();
-}
