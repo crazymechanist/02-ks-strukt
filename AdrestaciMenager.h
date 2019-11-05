@@ -15,24 +15,24 @@ using namespace std;
 
 class AdrestaciMenager
 {
+    const int ID_ZALOGOWANEGO_UZYTKOWNIKA;
     vector <Adresat> adresaci;
     PlikZAdresatami plikZAdresatami;
-    int idOstatniegoAdresata;
-    void wyswietlDaneAdresata(Adresat adresat);
-    Adresat podajDaneNowegoAdresata(int idZalogowanegoUzytkownika);
-    void dopiszAdresataDoPliku(Adresat adresat);
 
-    public:
-    AdrestaciMenager(string nazwaPlikuZAdresatami)
-    : plikZAdresatami(nazwaPlikuZAdresatami) {
-        idOstatniegoAdresata=0;
+    Adresat podajDaneNowegoAdresata(int idZalogowanegoUzytkownika);
+    void wyswietlDaneAdresata(Adresat adresat);
+
+
+public:
+    AdrestaciMenager(string nazwaPlikuZAdresatami, int idZalogowanegoUzytkownika)
+        : plikZAdresatami(nazwaPlikuZAdresatami),ID_ZALOGOWANEGO_UZYTKOWNIKA(idZalogowanegoUzytkownika) {
+        adresaci=plikZAdresatami.wczytajAdresatowZalogowanegoUzytkownikaZPliku(ID_ZALOGOWANEGO_UZYTKOWNIKA);
     }
-    int pobierzIdOstatniegoAdresata();
-    void wczytajAdresatowZalogowanegoUzytkownikaZPliku(int idZalogowanegoUzytkownika);
-    void wyswietlWszystkichAdresatow();
     void dodajAdresata(int idZalogowanegoUzytkownika);
+    void wyswietlWszystkichAdresatow();
+
     bool czyKsiazkaAdresatowJestPusta();
-    void wyczyscKsiazkeAdresowa();
+
 };
 
 #endif

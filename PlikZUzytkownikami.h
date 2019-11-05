@@ -13,15 +13,17 @@ using namespace std;
 
 class PlikZUzytkownikami{
 
-    const string nazwaPlikuZUzytkownikami;
+    const string NAZWA_PLIKU_Z_UZYTKOWNIKAMI;
     bool czyPlikJestPusty();
 
     string zamienDaneUzytkownikaNaLinieZDanymiOddzielonaPionowymiKreskami(Uzytkownik uzytkownik);
     Uzytkownik pobierzDaneUzytkownika(string daneJednegoUzytkownikaOddzielonePionowymiKreskami);
 
 public:
-    PlikZUzytkownikami(string NAZWAPLIKUZUZYTKOWNIKAMI)
-    :nazwaPlikuZUzytkownikami(NAZWAPLIKUZUZYTKOWNIKAMI) {}
+    PlikZUzytkownikami(string nazwaPlikuZUzytkownikami)
+    :NAZWA_PLIKU_Z_UZYTKOWNIKAMI(nazwaPlikuZUzytkownikami) {
+    //puste cialo konstruktora
+    }
     void dopiszUzytkownikaDoPliku(Uzytkownik uzytkownik);
     vector <Uzytkownik> wczytajUzytkownikowZPliku();
     void zapiszWszystkichUzytkownikowDoPliku(vector <Uzytkownik> &uzytkownicy);
