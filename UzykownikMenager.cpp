@@ -19,14 +19,12 @@ Uzytkownik UzykownikMenager::podajDaneNowegoUzytkownika(){
     do
     {
         cout << "Podaj login: ";
-        cin >> login;
-        uzytkownik.ustawLogin(login);
+        uzytkownik.ustawLogin(MetodyPomocniczne::wczytajLinie());
     } while (czyIstniejeLogin(uzytkownik.pobierzLogin()) == true);
 
     string haslo;
     cout << "Podaj haslo: ";
-    cin >> haslo;
-    uzytkownik.ustawHaslo(haslo);
+    uzytkownik.ustawHaslo(MetodyPomocniczne::wczytajLinie());
 
     return uzytkownik;
 }
