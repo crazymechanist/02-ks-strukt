@@ -79,3 +79,34 @@ bool AdrestaciMenager::czyKsiazkaAdresatowJestPusta(){
     return adresaci.empty();
 }
 
+int AdrestaciMenager::podajIdWybranegoAdresata()
+{
+    int idWybranegoAdresata = 0;
+    cout << "Podaj numer ID Adresata: ";
+    idWybranegoAdresata  = MetodyPomocniczne::wczytajLiczbeCalkowita();
+    return idWybranegoAdresata;
+}
+
+void AdrestaciMenager::usunAdresata() {
+    system("cls");
+    cout << ">>> USUWANIE WYBRANEGO ADRESATA <<<" << endl << endl;
+    int t = podajIdWybranegoAdresata();
+    if (czyIstniejeAdresat(t)) {
+        plikZAdresatami.usunAdresataZPliku(t);
+    }
+    else{
+        cout << "Nie usunieto adresata." << endl;
+        system("Pause");
+    }
+}
+
+bool AdrestaciMenager::czyIstniejeAdresat(int idAdresata) {
+    vector <Adresat>::iterator itr = adresaci.begin();
+    while (itr != adresaci.end() ) {
+        if (itr -> pobierzId() == idAdresata ) {
+            return true;
+        }
+        itr++;
+    }
+    return false;
+}

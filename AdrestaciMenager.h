@@ -21,6 +21,8 @@ class AdrestaciMenager
 
     Adresat podajDaneNowegoAdresata(int idZalogowanegoUzytkownika);
     void wyswietlDaneAdresata(Adresat adresat);
+    int podajIdWybranegoAdresata();
+    bool czyIstniejeAdresat(int idAdresata);
 
 
 public:
@@ -30,7 +32,7 @@ public:
     }
     void dodajAdresata(int idZalogowanegoUzytkownika);
     void wyswietlWszystkichAdresatow();
-
+    void usunAdresata();
     bool czyKsiazkaAdresatowJestPusta();
 
 };
