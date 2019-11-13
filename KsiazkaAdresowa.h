@@ -25,7 +25,8 @@ class KsiazkaAdresowa
     void dodajAdresata();
     void wyswietlWszystkichAdresatow();
     void usunAdresata();
-    void wyswietlMenu();
+    void edytujAdresata();
+
 
 public:
     KsiazkaAdresowa(string nazwaPlikuZUzytkownikami,string nazwaPlikuZAdresatami)
@@ -36,6 +37,7 @@ public:
         delete adrestaciMenager;
         adrestaciMenager = NULL;
     }
+    void wyswietlMenu();
 };
 
 #endif
