@@ -17,15 +17,6 @@ class KsiazkaAdresowa
     char wybierzOpcjeZMenuGlownego();
     const string NAZWA_PLIKU_Z_ADRESATAMI;
 
-public:
-    KsiazkaAdresowa(string nazwaPlikuZUzytkownikami,string nazwaPlikuZAdresatami)
-    :uzykownikMenager(nazwaPlikuZUzytkownikami), NAZWA_PLIKU_Z_ADRESATAMI(nazwaPlikuZAdresatami) {
-        adrestaciMenager = NULL;
-    }
-    ~KsiazkaAdresowa() {
-        delete adrestaciMenager;
-        adrestaciMenager = NULL;
-    }
     void rejestracjaUzytkownika();
     void wypiszWszystkichUzytkownkow();
     void logowanieUzytkownika();
@@ -36,6 +27,15 @@ public:
     void usunAdresata();
     void wyswietlMenu();
 
+public:
+    KsiazkaAdresowa(string nazwaPlikuZUzytkownikami,string nazwaPlikuZAdresatami)
+    :uzykownikMenager(nazwaPlikuZUzytkownikami), NAZWA_PLIKU_Z_ADRESATAMI(nazwaPlikuZAdresatami) {
+        adrestaciMenager = NULL;
+    }
+    ~KsiazkaAdresowa() {
+        delete adrestaciMenager;
+        adrestaciMenager = NULL;
+    }
 };
 
 #endif

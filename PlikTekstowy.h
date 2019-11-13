@@ -15,8 +15,8 @@ class PlikTekstowy{
 
 protected:
     const string NAZWA_PLIKU_TEKSTOWEGO;
+    int ileLiniWPliku();
     bool czyPlikJestPusty();
-    string pobierzNazwePliku();
 
 public:
     PlikTekstowy(string nazwaPlikuTekstowego)

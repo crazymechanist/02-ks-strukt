@@ -17,12 +17,16 @@ class AdrestaciMenager
 {
     const int ID_ZALOGOWANEGO_UZYTKOWNIKA;
     vector <Adresat> adresaci;
+    public:
     PlikZAdresatami plikZAdresatami;
-
+    private:
     Adresat podajDaneNowegoAdresata(int idZalogowanegoUzytkownika);
     void wyswietlDaneAdresata(Adresat adresat);
     int podajIdWybranegoAdresata();
-    bool czyIstniejeAdresat(int idAdresata);
+    bool usunAdresataZWektora(int idAdresata);
+    char wybierzOpcjeZMenuEdycja();
+    Adresat edytujAdresataWWektorze(int idAdresata);
+    void edytujDanaAdresata(Adresat &adresat);
 
 
 public:
@@ -33,6 +37,7 @@ public:
     void dodajAdresata(int idZalogowanegoUzytkownika);
     void wyswietlWszystkichAdresatow();
     void usunAdresata();
+    void edytujAdresata();
     bool czyKsiazkaAdresatowJestPusta();
 
 };

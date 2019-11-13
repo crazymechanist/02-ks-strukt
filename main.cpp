@@ -12,3 +12,13 @@ int main() {
 
     return 0;
 }
+
+//test usuwania i edytowania
+int main1() {
+    AdrestaciMenager adresatMenadzer("KsiazkaAdresowa.txt",1);
+    //cout<<adresatMenadzer.plikZAdresatami.pobierzIloscLini();
+    adresatMenadzer.usunAdresata();
+    //adresatMenadzer.edytujAdresata();
+
+    return 0;
+}

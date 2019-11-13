@@ -10,10 +10,10 @@ void Adresat::ustawIdUzytkownika(int NoweIdUzytkownika) {
     idUzytkownika = NoweIdUzytkownika;
 }
 void Adresat::ustawImie(string noweImie) {
-    imie=noweImie;
+    imie=MetodyPomocniczne::zamienPierwszaLitereNaDuzaAPozostaleNaMale(noweImie);
 }
 void Adresat::ustawNazwisko(string noweNazwisko) {
-    nazwisko=noweNazwisko;
+    nazwisko=MetodyPomocniczne::zamienPierwszaLitereNaDuzaAPozostaleNaMale(noweNazwisko);
 }
 void Adresat::ustawNumerTelefonu(string nowyNumerTelefonu) {
     numerTelefonu=nowyNumerTelefonu;
