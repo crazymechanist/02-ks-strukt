@@ -34,6 +34,11 @@ public:
     bool dopiszAdresataDoPliku(Adresat adresat);
     int pobierzIdOstatniegoAdresata();
     void usunAdresataZPliku(int idAdresata);
+    void edytujLinieWPliku(Adresat edytowanyAdresat);
+    int pobierzIloscLini()
+    {
+        return ileLiniWPliku();
+    }
 };
 
 #endif

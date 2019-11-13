@@ -2,6 +2,7 @@
 #define ADRESAT_H
 
 #include <iostream>
+#include "MetodyPomocniczne.h"
 
 using namespace std;
 
