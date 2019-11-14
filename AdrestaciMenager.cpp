@@ -88,9 +88,9 @@ int AdrestaciMenager::podajIdWybranegoAdresata()
 void AdrestaciMenager::usunAdresata() {
     system("cls");
     cout << ">>> USUWANIE WYBRANEGO ADRESATA <<<" << endl << endl;
-    int t = podajIdWybranegoAdresata();
-    if (usunAdresataZWektora(t)) {
-        plikZAdresatami.usunAdresataZPliku(t);
+    int idUsuwanegoAdresata = podajIdWybranegoAdresata();
+    if (usunAdresataZWektora(idUsuwanegoAdresata)) {
+        plikZAdresatami.usunAdresataZPliku(idUsuwanegoAdresata);
     }
     else{
         cout << "Nie usunieto adresata." << endl;
@@ -113,8 +113,8 @@ bool AdrestaciMenager::usunAdresataZWektora(int idAdresata) {
 void AdrestaciMenager::edytujAdresata() {
     system("cls");
     cout << ">>> EDYCJA WYBRANEGO ADRESATA <<<" << endl << endl;
-    int t = podajIdWybranegoAdresata();
-    Adresat edytowanyAdresat = edytujAdresataWWektorze(t);
+    int idEdytowanegoAdresata = podajIdWybranegoAdresata();
+    Adresat edytowanyAdresat = edytujAdresataWWektorze(idEdytowanegoAdresata);
     if (edytowanyAdresat.pobierzId()!=0) {
         plikZAdresatami.edytujLinieWPliku(edytowanyAdresat);
     } else {
