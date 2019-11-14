@@ -16,7 +16,6 @@ int main() {
 //test usuwania i edytowania
 int main1() {
     AdrestaciMenager adresatMenadzer("KsiazkaAdresowa.txt",1);
-    //cout<<adresatMenadzer.plikZAdresatami.pobierzIloscLini();
     adresatMenadzer.usunAdresata();
     //adresatMenadzer.edytujAdresata();
 

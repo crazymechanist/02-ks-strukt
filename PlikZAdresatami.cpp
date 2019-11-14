@@ -170,6 +170,7 @@ void PlikZAdresatami::usunWybranaLinieWPliku(int numerUsuwanejLinii) {
                         tymczasowyPlikTekstowy<<wczytanaLinia<<endl;
                     } else {
                         tymczasowyPlikTekstowy<<wczytanaLinia;
+                        idOstatniegoAdresata=pobierzIdAdresataZDanychOddzielonychPionowymiKreskami(wczytanaLinia);
                     }
                 }
             }
@@ -189,8 +190,8 @@ void PlikZAdresatami::usunWybranaLinieWPliku(int numerUsuwanejLinii) {
 
 void PlikZAdresatami::usunAdresataZPliku(int idAdresata)
 {
-    int t=zwrocNumerLiniiSzukanegoAdresata(idAdresata);
-    usunWybranaLinieWPliku(t);
+    int numerLini=zwrocNumerLiniiSzukanegoAdresata(idAdresata);
+    usunWybranaLinieWPliku(numerLini);
 }
 
 void PlikZAdresatami::edytujLinieWPliku(Adresat edytowanyAdresat) {
